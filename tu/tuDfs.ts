@@ -1,4 +1,4 @@
-function dfs(node, nodes) {
+function dfs(node, nodes):number[] {
   nodes = nodes || [];
   if (node) {
     nodes.push(node);

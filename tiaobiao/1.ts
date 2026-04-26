@@ -29,10 +29,9 @@ export class SkipList {
         this.head = new SkipListNode(-1, SkipList.MAX_LEVEL);
         this.currentLevel = 1;
     }
-
+    
     /**
-     * 抛硬币决定节点的层数
-     * 只要随机数小于 P_FACTOR，就增加一层，直到达到 MAX_LEVEL
+     * 随机生成的层数
      * @returns {number} 随机生成的层数
      */
     private randomLevel(): number {
