@@ -11,10 +11,7 @@ class TreeNode<T> {
     this.right = right;
   }
 }
-
-// 创建一个简单的二叉树示例：根节点1，左子节点2，右子节点3
 let root = new TreeNode(1, new TreeNode(2), new TreeNode(3));
-
 // 前序遍历函数：根 -> 左 -> 右
 function pre(node: TreeNode<number> | null): void {
   if (node === null) return; // 如果节点为空，直接返回
@@ -42,4 +39,24 @@ function inorder(node: TreeNode<number> | null): void {
   inorder(node.left);  // 1. 先递归遍历左子树
   console.log(node.val); // 2. 然后访问根节点
   inorder(node.right); // 3. 最后递归遍历右子树
+}
+
+function level(root: TreeNode<number> | null): void {
+  if (root === null) return; // 如果根节点为空，直接返回
+
+  const queue: TreeNode<number>[] = [root]; // 初始化队列，放入根节点
+  while (queue.length > 0) {
+    const node = queue.shift()!; // 从队列前端取出节点
+    console.log(node.val); // 访问当前节点
+
+    // 如果左子节点存在，加入队列
+    if (node.left !== null) {
+      queue.push(node.left);
+    }
+
+    // 如果右子节点存在，加入队列
+    if (node.right !== null) {
+      queue.push(node.right);
+    }
+  }
 }
