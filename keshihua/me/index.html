@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>堆排序可视化</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-container">
+      <header>
+        <h1>堆排序 可视化</h1>
+      </header>
+
+      <!-- 控制面板：用于输入和操作 -->
+      <section class="controls-panel">
+        <div class="input-group">
+          <label for="array-input">输入数组 (逗号分隔):</label>
+          <input type="text" id="array-input" value="15, 3, 17, 10, 84, 19, 6, 22, 9" />
+        </div>
+        <div class="button-group">
+          <button id="btn-init">初始化</button>
+          <button id="btn-prev" disabled>上一步</button>
+          <button id="btn-next" disabled>下一步</button>
+          <button id="btn-auto" disabled>自动完成</button>
+        </div>
+      </section>
+
+      <section class="status-bar">
+        <p id="action-message">等待初始化...</p>
+      </section>
+
+      <!-- 核心舞台：动画和节点呈现的地方 -->
+      <section class="visualization-stage">
+        <!-- 上方：二叉树结构视图 -->
+        <div id="tree-container" class="tree-view">
+          <!-- TS 将会在这里动态生成绝对定位的节点和连线 -->
+        </div>
+
+        <!-- 下方：一维数组结构视图 -->
+        <div id="array-container" class="array-view">
+          <!-- TS 将会在这里动态生成数组块 -->
+        </div>
+      </section>
+    </div>
+
+    <!-- 引入我们将要编写的 TypeScript 逻辑 -->
+    <script type="module" src="main.ts"></script>
+  </body>
+</html>
