@@ -12,12 +12,7 @@ class SkipListNode {
     }
 }
 
-/**
- * 跳表 (Skip List)
- * 核心思想：通过概率引入多级索引的链表，典型的时间与空间权衡。
- * 期望时间复杂度：查找/插入/删除均为 O(log n)
- */
-export class SkipList {
+class SkipList {
     private static readonly MAX_LEVEL = 32;
     private static readonly P_FACTOR = 0.5;
 

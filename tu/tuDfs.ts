@@ -1,4 +1,4 @@
-function dfs(node, nodes):number[] {
+function dfs(node: any, nodes: any[]): number[] {
   nodes = nodes || [];
   if (node) {
     nodes.push(node);
@@ -8,5 +8,4 @@ function dfs(node, nodes):number[] {
     }
   }
   return nodes;
-
 }
